@@ -15,8 +15,100 @@ General Sibling Selector (all next)
     b ~ i
 Child Selector
     p > .name           Selects all .name classes where the  P A R E N T  is a <p> element (только непосредственные, ближайшие потомки, более глубокие не затронутся)
+Attributes selectors
+    [target]	        Selects all elements with a   t a r g e t  A T T R I B U T E    (e.g. <a href="..." target="_blank">...</a>)
+    a[target=_blank]	    Selects all <a> elements with target="_blank"
+Advanced attributes selectors
+        /* Attribute value starts with some text */
+    a[href^="http://" ]
+        /* If link ends with ".com" */
+    a[href$=".com"]
+        /* If link contains "google" */
+    [href*="google"]
+        /* One of the several attribute values */
+    [title~="block"]
+Pseudoclasses
+     a:hover {...}
+     a:visited:hover {...}
+Pseudoelements
+    p::before	        Insert something before the content of each <p> element
+Grouping
+    h1, h2, h3 {...}
+Inheritance
+    body {...}
+    div {...}
+    div.red {...}
+CSS Variables
+    They are set using custom property notation (e.g. --main-color: black;)
+    and are accessed using the var() function (e.g. color: var(--main-color);)
+    :root {
+      --spacing: 1.5em; // declaring a variable
+      --base-colors: {  // declaring a mixin
+        color: #fff;
+        background-color: color(#fff shade(+80%)); // modifying a color
+      }
+    }
+    .some-class {
+      padding: var(--spacing);
+      width: calc(100% - var(--spacing)); // dynamically calculating a value
+      @apply --base-colors;
+    }
+Cascading
+    The higher style rule is placed in this list, the lower its priority and vice versa:
+    Browser’s style
+    Author’s style
+    User’s style
+    The author's style adding !Important
+    The user’s style adding !Important
+Selector’s weight
+    For each identifier (hereinafter denote the number through a) there are 100 point,
+    for each class and pseudoclass (b) there are 10 point,
+    for each tag selectors and pseudoselector (c) there is 1 point.
+    Composing ​​listed values in any particular order, we obtain the weight for the selector:
+    style=""    #id = a .class = b tag = c
+    Selector	        Points	        Result
+    * {}	            a=0 b=0 c=0	    points = 0
+    li {}	            a=0 b=0 c=1	    points = 1
+    li:first-line {}	a=0 b=0 c=2	    points = 2
+    ul li {}	        a=0 b=0 c=2	    points = 2
+    ul ol+li {}	        a=0 b=0 c=3	    points = 3
+    ul li.red {}	    a=0 b=1 c=2	    points = 12
+    li.red.level {}	    a=0 b=2 c=1	    points = 21
+    #t34 {}	            a=1 b=0 c=0	    points = 100
+    #content #wrap {}	a=2 b=0 c=0	    points = 200
+                calculator: https://specificity.keegan.st/
+A list of some common CSS properties
+    background: #ccc;
+    border: #ccc solid 1px;
+    color: #ccc;
+    cursor: pointer;
+    display: block;
+    font: normal 14px/1.2 Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif
+    font-size: 14px;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 1.3;
+    text-align: left;
+    text-indent: -10px;
+    vertical-align: top;
+    visibility: hidden;
+    white-space: nowrap;
+    list-style: none;
+    outline: #fc0 dotted 1px;
+    margin: 10px 5px 20px 3px;
+    padding: 20px 10px;
+    width: 100%;
+    height: 400px;
+    max-height: 50px;
+    max-width: 100em;
+    min-height: 1em;
+    min-width: 50%;
+    opacity: 0.5;
+    overflow: hidden;
 
-
-
+http://jigsaw.w3.org/css-validator/
+https://specificity.keegan.st/
+https://caniuse.com/
 
 
