@@ -1,0 +1,22 @@
+https://www.w3schools.com/cssref/css_selectors.asp
+
+Selectors. Classes
+    p
+    p.cite
+    .article
+Selectors. Identifiers
+    #help
+Descendant Selectors
+    div b               Selects all <b> elements  I N S I D E  <div> elements
+    .main-nav li
+Adjacent Sibling Selector (one next)
+    b + i
+General Sibling Selector (all next)
+    b ~ i
+Child Selector
+    p > .name           Selects all .name classes where the  P A R E N T  is a <p> element (только непосредственные, ближайшие потомки, более глубокие не затронутся)
+
+
+
+
+
