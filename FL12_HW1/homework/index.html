@@ -70,8 +70,10 @@
           <hr>
           <h2>Text formats</h2>
           <h3>Article</h3>
-          <h2>Article title</h2>
-          <h5>Article description</h5>
+            <article>
+                <h2>Article title</h2>
+                <h5>Article description</h5>
+            </article>
           <h3>Preformatted Text</h3>
           <pre>
 Text in a <strong>pre</strong> element
@@ -168,25 +170,26 @@ both           <strong>spaces</strong> and
                 make it easy to read."
                 <p><a href="#">Robert C. Martin (Uncle Bob)</a></p>
             </blockquote>
+            <hr>
             <form action="#">
                 <fieldset>
-                    <p>
+                    <div>
                         <label>Username:
                             <input type="text">
                         </label>
-                    </p>
-                    <p>
+                    </div>
+                    <div>
                         <label>Email:
                             <input type="email">
                         </label>
-                    </p>
-                    <p>
+                    </div>
+                    <div>
                         <label>Password:
                             <input type="password">
                         </label>
-                    </p>
-                    <p><textarea rows="10" cols="23"></textarea></p>
-                    <p><input type="submit" value="Submit"></p>
+                    </div>
+                    <div><textarea rows="10" cols="23"></textarea></div>
+                    <div><button>Submit</button></div>
                 </fieldset>
             </form>
             <footer>
