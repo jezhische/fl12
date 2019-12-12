@@ -7,8 +7,11 @@ Selectors. Classes
 Selectors. Identifiers
     #help
 Descendant Selectors
-    div b               Selects all <b> elements  I N S I D E  <div> elements
+    div b               Selects all <b> elements  I N S I D E  <div> elements (i.e.  D E S C E N D A N T S of that div)
     .main-nav li
+NB: .class1.class2  Selects all elements with both name1 and name2 set within its class attribute <div class="name1 name2">...</div>,
+BUT: .class1 .class2 (or .main-nav li etc)  Selects all elements with name2 that is a  D E S C E N D A N T  of an element with name1 <div class="name1">
+                                                                                                                                       <div class="name2"> ... </div></div>
 Adjacent Sibling Selector (one next)
     b + i
 General Sibling Selector (all next)

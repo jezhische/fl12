@@ -22,9 +22,12 @@
 <body>
 <div class="container">
 
+<!--  class tm-sidebar contains z-index: 10; and position: fixed;, that makes it to stay on the screen in all scrollbar positions-->
   <div class="tm-sidebar">
     <nav class="tm-main-nav">
+<!-- .tm-sidebar ul {display: flex;} (and flex-direction: row; by default), so li elements align by row rather that by column -->
       <ul>
+<!-- .tm-nav-item:hover, .tm-nav-item-link:hover -->
         <li class="tm-nav-item"><a href="#home" class="tm-nav-item-link">Home</a></li>
         <li class="tm-nav-item"><a href="#about" class="tm-nav-item-link">About</a></li>
         <li class="tm-nav-item"><a href="#ideas" class="tm-nav-item-link">Ideas</a></li>
@@ -36,18 +39,24 @@
   <div class="tm-main-content">
 
     <div id="home" class="tm-content-box tm-content-header margin-b-10">
+<!-- .tm-banner: box-shadow, background-image: linear-gradient -->
       <div class="tm-banner">
         <div class="tm-banner-inner">
           <img src="img/epam_logo.png" width="100" alt="">
+<!--  .tm-banner-text: text-shadow,  animation -->
           <p class="tm-banner-text">Engineering the Digital Future</p>
         </div>
       </div>
     </div>
 
     <section>
+<!-- task 6 (a part)
+flex-2-col to turn this div to flex container. Two nested (child) divs turn then to flex elements.
+Property align-items: center;, so that child divs align to the center of VERTICAL axis  -->
       <div class="tm-content-box flex-2-col">
 
         <div class="padding-medium flex-item tm-team-description-container flex-item">
+<!-- TODO: class tm-section-title has two colors in css: lightskyblue and #666. Why only lightskyblue is implemented?  -->
           <h2 class="tm-section-title">What We Do</h2>
           <p class="tm-section-description">We help customers around the world become competitive – and stay competitive.</p>
           <p class="tm-section-description"> We combine best-in-class software engineering with digital strategy and experience design, business consulting and technology innovation services.</p>
@@ -60,7 +69,9 @@
 
       <div id="about" class="tm-content-box">
 
+<!-- NB: .boxes { display: flex;...} -->
         <ul class="boxes gallery-container">
+<!-- NB: .box {width: 33.3333%; ...} -->
           <li class="box box-bg">
             <h2 class="tm-section-title tm-section-title-box tm-box-bg-title">Consult</h2>
           </li>
@@ -104,9 +115,11 @@
 
     <!-- slider -->
     <section class="heading tm-content-box">
+<!-- padding-medium li { list-style: lower-alpha;} :hover::before {content: '>';...}-->
       <div class="padding-medium">
-        <h2> WE ARE...</h2>
+        <h2 class="tm-section-title"> WE ARE...</h2>
         <ol>
+<!-- text: add label "New" -->
           <li><a href="index.html" class="text">Designers</a></li>
           <li><a href="index.html">Consultants</a></li>
           <li><a href="#" class="text">Strategists</a></li>
@@ -120,14 +133,17 @@
 
     <section class="blocks">
       <div class="padding-medium flex-item tm-team-description-container">
+<!--    section:nth-of-type(3) .tm-section-title { text-align: left; }  -->
         <h2 class="tm-section-title">Our Work</h2>
         <p class="tm-section-description">We've helped over 120 Fortune 1000 companies in the following industries solve their most complex technology challenges. </p>
+<!-- section:nth-of-type(3) p:nth-child(3) { letter-spacing: 5px; word-spacing: 10px; } -->
         <p class="tm-section-description"> Now see what we can do for you.</p>
       </div>
       <div class="tm-content-box flex-2-col">
       </div>
       <div  class="tm-content-box">
         <ul class="boxes gallery-container">
+<!--   section:nth-of-type(3) li:nth-child(odd) {padding: 10px; background-color: lightskyblue; color: #fff;} -->
           <li class="box box-work">
             <img src="img/study.jpeg" alt="Image" class="img-fluid">
             <div>
@@ -228,10 +244,12 @@
       <img src="img/contact-us.jpg" alt="Contact image" class="img-fluid img-contact-us">
 
       <div id="contact" class="padding-medium">
+<!--  section:nth-of-type(5) .tm-section-title { text-align: left; } -->
         <h2 class="tm-section-title">Work with Us</h2>
         <form action="#contact" method="get" class="contact-form">
 
           <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 form-group-2-col-left">
+<!--  section:nth-of-type(5) input:focus { background-color: lightblue; } -->
             <input type="text" id="contact_name" name="contact_name" class="form-control"
                    placeholder="Name" required/>
           </div>
